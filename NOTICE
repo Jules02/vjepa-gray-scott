@@ -1,0 +1,22 @@
+V-JEPA for Gray-Scott dynamics
+Copyright 2026 The JEPAdormi team
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+------------------------------------------------------------------------
+Third-party / vendored code
+------------------------------------------------------------------------
+
+This repository vendors a subset of the eb_jepa library:
+
+    eb_jepa  —  https://github.com/facebookresearch/eb_jepa
+    Licensed under the Apache License, Version 2.0.
+
+The files under `eb_jepa/` originate from that project. Some of them have
+been modified for the Gray-Scott work in this repository; the modified
+files and the nature of the changes are documented in CONTRIBUTIONS.md.
+
+All original work in this repository (the `gray_scott/` track, the
+`eb_jepa/datasets/gray_scott/` dataset loader, and the top-level launcher
+scripts) is Copyright 2026 The JEPAdormi team and is likewise released
+under the Apache License, Version 2.0.
