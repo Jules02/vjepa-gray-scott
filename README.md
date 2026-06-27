@@ -46,10 +46,17 @@ pip install the-well      # required for the Gray-Scott data + baseline models
 
 **Data.** The Gray-Scott trajectories come from
 [The Well](https://polymathic-ai.org/the_well/datasets/gray_scott_reaction_diffusion/).
-The dataset location is set by `ROOT` in
-`eb_jepa/datasets/gray_scott/dataset.py` — point it at your local copy (it
-currently holds the cluster path used during the hackathon). See the
-[track README's Data section](gray_scott/README.md#data) for details.
+Point the loader at your local copy via an environment variable (no code edit
+needed) — expected layout `<ROOT>/data/{train,valid,test}/*.hdf5`:
+
+```bash
+export GRAY_SCOTT_DATA_ROOT=/path/to/gray_scott_reaction_diffusion
+# or set EBJEPA_DSETS (env.sh does this) and the loader looks under
+#   $EBJEPA_DSETS/the_well/gray_scott_reaction_diffusion
+# default if neither is set: ./data/the_well/gray_scott_reaction_diffusion
+```
+
+See the [track README's Data section](gray_scott/README.md#data) for details.
 
 > **Note:** `eb_jepa` imports `scikit-learn`, which must match your installed
 > NumPy. On a NumPy 1.x/2.x ABI error from inside sklearn, pin a matching pair

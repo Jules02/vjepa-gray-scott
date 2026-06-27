@@ -24,7 +24,19 @@ try:
 except ImportError:
     h5py = None
 
-ROOT = "/lustre/work/pdl17890/udl806719/datasets/the_well/gray_scott_reaction_diffusion"
+# Dataset location. Resolution order:
+#   1. $GRAY_SCOTT_DATA_ROOT          (explicit, points straight at the dataset dir)
+#   2. $EBJEPA_DSETS/the_well/...     ($EBJEPA_DSETS is set by env.sh)
+#   3. ./data/the_well/...            (repo-relative fallback)
+# The dataset is expected at  <ROOT>/data/{train,valid,test}/*.hdf5  (The Well layout).
+ROOT = os.environ.get(
+    "GRAY_SCOTT_DATA_ROOT",
+    os.path.join(
+        os.environ.get("EBJEPA_DSETS", "data"),
+        "the_well",
+        "gray_scott_reaction_diffusion",
+    ),
+)
 # per-channel stats from data/stats.yaml (A, B)
 MEAN = np.array([0.729227819893941, 0.09658732411527585], dtype=np.float32)
 STD = np.array([0.23988766176449572, 0.12366442840472558], dtype=np.float32)

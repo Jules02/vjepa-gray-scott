@@ -15,6 +15,11 @@ maze-like, ...) — one regime per HDF5 file. A training item is a clip of
 `[2, T, 128, 128]` tensor, z-scored per channel. The train/valid/test splits are
 the dataset's own trajectory folders, so any probe is trajectory-disjoint.
 
+**Location.** The loader (`eb_jepa/datasets/gray_scott/dataset.py`) finds the data
+via `$GRAY_SCOTT_DATA_ROOT`, else `$EBJEPA_DSETS/the_well/gray_scott_reaction_diffusion`,
+else `./data/the_well/gray_scott_reaction_diffusion`; it expects
+`<ROOT>/data/{train,valid,test}/*.hdf5`.
+
 ## Layout
 ```
 eb_jepa/datasets/gray_scott/   dataset.py (provided HDF5 loader) + data_config.yaml
