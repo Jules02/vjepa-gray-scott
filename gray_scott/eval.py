@@ -6,8 +6,8 @@ roll the frozen JEPA predictor forward in LATENT space, DECODE each latent back
 to a 2-channel field, and score multi-step VRMSE against ground truth and a
 PERSISTENCE baseline (optionally vs FNO / U-Net surrogates).
 
-The rollout-extraction harness is provided. What you implement (``# TODO``) is the
-latent->field DECODER and the VRMSE metric that makes the comparison meaningful.
+On top of the rollout-extraction harness, the two pieces that make the comparison
+meaningful are the latent->field DECODER and the VRMSE metric.
 
 Run:  python -m gray_scott.eval --ckpt <.../latest.pth.tar> --H 10
 """
@@ -54,7 +54,7 @@ def rollout_latents(jepa, x, H, device):
 
 
 # --------------------------------------------------------------------------- #
-# LATENT -> FIELD DECODER  — # TODO
+# LATENT -> FIELD DECODER
 # --------------------------------------------------------------------------- #
 class _FrameDecoder(nn.Module):
     """Per-frame latent->field decoder: [B,D,T,H,W] -> [B,2,T,H,W]."""
@@ -169,7 +169,7 @@ def build_decoder(dstc, device, ckpt_path=None):
 
 
 # --------------------------------------------------------------------------- #
-# METRIC  — # TODO
+# METRIC
 # --------------------------------------------------------------------------- #
 _HEADLINE_KEYS = ("jepa", "persistence", "floor")
 

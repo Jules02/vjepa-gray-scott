@@ -9,8 +9,7 @@ JEPA (video-style), NOT a two-view objective:
   target   z_target = target_encoder(future frames)      (EMA, no grad)
   loss     = || z_hat - z_target ||  (latent prediction) + VC(z) (anti-collapse)
 
-The DATA + TRAINING LOOP are provided. The two modelling pieces you implement are
-marked ``# TODO`` below — that is the whole point of the track:
+The two modelling pieces, on top of the data pipeline and training loop, are:
   1. the 2D encoder over a frame  ``[B, 2, H, W] -> [B, D, h, w]``
   2. the temporal-JEPA assembly (encoder + EMA target + predictor + VCLoss)
 
@@ -31,7 +30,7 @@ from eb_jepa.training_utils import setup_wandb
 
 
 # --------------------------------------------------------------------------- #
-# 1) ENCODER  — # TODO
+# 1) ENCODER
 # --------------------------------------------------------------------------- #
 def _augment_d4(x):
     """Apply one random dihedral-group (D4) spatial symmetry to a clip batch [B,2,T,H,W].
@@ -57,7 +56,7 @@ def build_encoder(cfg):
 
 
 # --------------------------------------------------------------------------- #
-# 2) TEMPORAL-JEPA ASSEMBLY  — # TODO
+# 2) TEMPORAL-JEPA ASSEMBLY
 # --------------------------------------------------------------------------- #
 def build_jepa(encoder, cfg):
     D = cfg.dstc

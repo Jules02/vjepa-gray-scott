@@ -57,9 +57,8 @@ loss     = || z_hat - z_target ||  (SquareLossSeq) + VCLoss(std, cov)  (anti-col
 There is **no pixel loss in pretraining** — the model predicts a *representation*
 of the future. A latent->field decoder is added only at eval to score VRMSE.
 
-## The four key pieces (implemented)
-The example started as a template with four `# TODO`s; they are now implemented.
-What each one is and where it lives:
+## The four key pieces
+The four modelling pieces of the method, and where each lives:
 1. `main.py:build_encoder` — a 2D frame encoder `[B, 2, H, W] -> [B, D, h, w]`
    (point at `eb_jepa.architectures.ResNet5` / `ImpalaEncoder`; stride-1 keeps the
    latent full-resolution so a decoder can map it back to a field).
