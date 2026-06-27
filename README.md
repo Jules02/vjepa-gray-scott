@@ -62,10 +62,15 @@ python -m gray_scott.eval --ckpt <run>/latest.pth.tar --H 30
 python -m gray_scott.baselines --split test --H 30
 ```
 
+### On a cluster (SLURM)
+
 The `train_*.sh`, `slurm_*.sh` and `run_*.sh` files in [`scripts/`](scripts/) are the
-SLURM / convenience launchers we used on the cluster (submit them from the repo
-root, e.g. `sbatch scripts/train_gs_vjepa.sh`); the full catalogue of
-analysis and visualization scripts is documented in
+SLURM launchers we used on the cluster. Submit them from the repo root, e.g.
+`sbatch scripts/train_gs_vjepa.sh`. See
+**[`scripts/example_experiment.sh`](scripts/example_experiment.sh)** for an
+annotated, end-to-end template (train → evaluate) explaining the `#SBATCH`
+directives and the `env.sh` setup. The full catalogue of analysis and
+visualization scripts is documented in
 [`gray_scott/README.md`](gray_scott/README.md#scripts).
 
 ## More
