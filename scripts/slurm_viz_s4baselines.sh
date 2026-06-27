@@ -1,17 +1,18 @@
 #!/bin/bash
 #SBATCH --job-name=gs_viz_s4b
-#SBATCH --output=/lustre/work/vivatech-jepadormi/aduplessi/eb_jepa/slurm_viz_s4baselines_%j.out
+#SBATCH --output=slurm_viz_s4baselines_%j.out
 #SBATCH --time=60
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4
 #SBATCH --reservation=Vivatech
 #SBATCH --account=vivatech-jepadormi
 
-source /lustre/work/vivatech-jepadormi/aduplessi/eb_jepa/env.sh
-cd /lustre/work/vivatech-jepadormi/aduplessi/eb_jepa
+REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
+source "$REPO/env.sh"
+cd "$REPO"
 
-CKPT_SMALL=/lustre/work/vivatech-jepadormi/aduplessi/checkpoints/gray_scott/dev/epoch_19.pth.tar
-CKPT_V2=/lustre/work/vivatech-jepadormi/abenmanso/checkpoints/gray_scott/vjepa_v2/epoch_10.pth.tar
+CKPT_SMALL="${CKPT_SMALL:-$EBJEPA_CKPTS/gray_scott/dev/epoch_19.pth.tar}"
+CKPT_V2="${CKPT_V2:-$EBJEPA_CKPTS/gray_scott/vjepa_v2/epoch_10.pth.tar}"
 
 echo "=== GIFs: Truth | JEPA-small | JEPA-v2 (ep10) | ResUNet-s4 | FNO-s4 ==="
 

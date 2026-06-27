@@ -10,7 +10,7 @@
 #SBATCH --error=gs_vrmse_%j.err
 # Field-space VRMSE eval of a Gray-Scott temporal-JEPA checkpoint (The Well Table 3 windows).
 # Usage:  sbatch scripts/vrmse.sh [CKPT] [H] [SPLIT]
-#   CKPT   checkpoint to evaluate (default: aduplessi's gray_scott dev latest)
+#   CKPT   checkpoint to evaluate (default: $EBJEPA_CKPTS/gray_scott/dev/latest.pth.tar)
 #   H      autoregressive rollout horizon (default 30 -> windows [6:12] & [13:30])
 #   SPLIT  test (default, the clean report) | valid
 # eval.py picks the rollout stride = the checkpoint's own training stride automatically.
@@ -19,13 +19,13 @@ REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
 source "$REPO/env.sh"
 module load python312
 
-SRC="${1:-/lustre/work/vivatech-jepadormi/aduplessi/checkpoints/gray_scott/dev/latest.pth.tar}"
+SRC="${1:-$EBJEPA_CKPTS/gray_scott/dev/latest.pth.tar}"
 H="${2:-30}"
 SPLIT="${3:-test}"
 
 # eval.py:build_decoder() may TRAIN a decoder and WRITE it back into the checkpoint. If the
 # file is ours (writable) we eval IN PLACE (and reuse the decoder cached by scripts/train_decoder.sh).
-# If it is read-only (e.g. aduplessi's), we eval a LOCAL COPY in our own space instead.
+# If it is read-only (e.g. someone else's shared ckpt), we eval a LOCAL COPY in our own space instead.
 if [ -w "$SRC" ]; then
     CKPT="$SRC"
     echo "[vrmse] writable checkpoint -> evaluating in place: $CKPT"

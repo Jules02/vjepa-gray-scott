@@ -1,16 +1,17 @@
 #!/bin/bash
 #SBATCH --job-name=gs_probe
-#SBATCH --output=/lustre/work/vivatech-jepadormi/aduplessi/eb_jepa/slurm_probe_%j.out
+#SBATCH --output=slurm_probe_%j.out
 #SBATCH --time=30
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4
 #SBATCH --reservation=Vivatech
 #SBATCH --account=vivatech-jepadormi
 
-source /lustre/work/vivatech-jepadormi/aduplessi/eb_jepa/env.sh
-cd /lustre/work/vivatech-jepadormi/aduplessi/eb_jepa
+REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
+source "$REPO/env.sh"
+cd "$REPO"
 
-CKPT=/lustre/work/vivatech-jepadormi/aduplessi/checkpoints/gray_scott/dev/epoch_19.pth.tar
+CKPT="${CKPT:-$EBJEPA_CKPTS/gray_scott/dev/epoch_19.pth.tar}"
 
 echo "=== F/k probe — JEPA small D=16 stride=4 epoch=19 ==="
 

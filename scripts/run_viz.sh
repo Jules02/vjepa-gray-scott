@@ -18,7 +18,7 @@ REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
 source "$REPO/env.sh"
 module load python312
 
-CKPT="${1:-/lustre/work/vivatech-jepadormi/abenmanso/checkpoints/gray_scott/vjepa_v2/epoch_10.pth.tar}"
+CKPT="${1:-$EBJEPA_CKPTS/gray_scott/vjepa_v2/epoch_10.pth.tar}"
 H="${2:-120}"
 PER_REGIME="${3:-1}"   # GIFs per phase (1 -> 6 GIFs; 2 -> 12 GIFs ...)
 

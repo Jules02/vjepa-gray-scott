@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=gs_eval_large
-#SBATCH --output=/lustre/work/vivatech-jepadormi/aduplessi/eb_jepa/slurm_eval_large_%j.out
+#SBATCH --output=slurm_eval_large_%j.out
 #SBATCH --time=14:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -8,9 +8,9 @@
 #SBATCH --gres=gpu:1
 #SBATCH --reservation=Vivatech
 
-REPO=/lustre/work/vivatech-jepadormi/aduplessi/eb_jepa
-cd $REPO
-source env.sh
+REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
+cd "$REPO"
+source "$REPO/env.sh"
 
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 

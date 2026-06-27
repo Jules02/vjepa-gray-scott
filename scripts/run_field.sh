@@ -18,7 +18,7 @@ REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
 source "$REPO/env.sh"
 module load python312
 
-CKPT="${1:-/lustre/work/vivatech-jepadormi/abenmanso/checkpoints/gray_scott/vjepa_v2/epoch_25.pth.tar}"
+CKPT="${1:-$EBJEPA_CKPTS/gray_scott/vjepa_v2/epoch_25.pth.tar}"
 PER_REGIME="${2:-20}"
 H="${3:-60}"
 
