@@ -9,7 +9,7 @@
 #SBATCH --output=gs_vrmse_%j.out
 #SBATCH --error=gs_vrmse_%j.err
 # Field-space VRMSE eval of a Gray-Scott temporal-JEPA checkpoint (The Well Table 3 windows).
-# Usage:  sbatch vrmse.sh [CKPT] [H] [SPLIT]
+# Usage:  sbatch scripts/vrmse.sh [CKPT] [H] [SPLIT]
 #   CKPT   checkpoint to evaluate (default: aduplessi's gray_scott dev latest)
 #   H      autoregressive rollout horizon (default 30 -> windows [6:12] & [13:30])
 #   SPLIT  test (default, the clean report) | valid
@@ -24,7 +24,7 @@ H="${2:-30}"
 SPLIT="${3:-test}"
 
 # eval.py:build_decoder() may TRAIN a decoder and WRITE it back into the checkpoint. If the
-# file is ours (writable) we eval IN PLACE (and reuse the decoder cached by train_decoder.sh).
+# file is ours (writable) we eval IN PLACE (and reuse the decoder cached by scripts/train_decoder.sh).
 # If it is read-only (e.g. aduplessi's), we eval a LOCAL COPY in our own space instead.
 if [ -w "$SRC" ]; then
     CKPT="$SRC"

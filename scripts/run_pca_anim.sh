@@ -10,7 +10,7 @@
 #SBATCH --error=gs_pcaAnim_%j.err
 # Animated latent-PCA / state-entropy GIF -> outputs/gif_pca_entropy.gif (+ pca_anim_data.npz).
 #
-# Usage:  sbatch run_pca_anim.sh [CKPT] [PER_REGIME] [H]
+# Usage:  sbatch scripts/run_pca_anim.sh [CKPT] [PER_REGIME] [H]
 set -e
 REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
 source "$REPO/env.sh"

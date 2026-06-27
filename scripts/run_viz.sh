@@ -12,7 +12,7 @@
 # Gray-Scott phase (gliders/bubbles/maze/worms/spirals/spots) -> results/viz_<phase>.gif.
 # U-Net/FNO are loaded from cache if present, else trained+saved once.
 #
-# Usage:  sbatch run_viz.sh [CKPT] [H] [PER_REGIME]
+# Usage:  sbatch scripts/run_viz.sh [CKPT] [H] [PER_REGIME]
 set -e
 REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
 source "$REPO/env.sh"

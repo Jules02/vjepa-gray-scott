@@ -11,7 +11,7 @@
 # Plots from the per-phase per-clip VRMSE data: curves, phase x model histogram grids,
 # grouped bars -> results/*.png (+ results/vrmse_data.npz). Cached decoder/U-Net/FNO.
 #
-# Usage:  sbatch run_plots.sh [CKPT] [PER_REGIME] [H]
+# Usage:  sbatch scripts/run_plots.sh [CKPT] [PER_REGIME] [H]
 set -e
 REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
 source "$REPO/env.sh"

@@ -8,7 +8,7 @@ dynamics are visible between them.
 
 Data loading is PROVIDED (plumbing). The modelling choices on top of these clips
 (encoder, temporal JEPA objective, eval decoder/metric) live in
-``gray_scott/`` and are where the ``# TODO``s are.
+``gray_scott/``.
 """
 import glob
 import os

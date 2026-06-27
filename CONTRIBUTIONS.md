@@ -35,7 +35,7 @@ Temporal Gray-Scott reaction-diffusion VJEPA, end to end:
 - **Configs** — `cfgs/{train,train_large,train_stride1,train_vjepa,train_vjepa_v2,eval}.yaml`.
 - **Docs** — `README.md`, `DESIGN.md`, `DESIGN_large.md`.
 
-### Root-level launchers we wrote
+### Launcher scripts we wrote (`scripts/`)
 `train_gs_vjepa.sh`, `train_gs_vjepa_v2.sh`, `train_decoder.sh`,
 `slurm_*.sh` (analysis, pca, perturb, probe, viz, eval),
 `run_*.sh` (baselines, field, final_table, pca, plots, potential, render_slides,

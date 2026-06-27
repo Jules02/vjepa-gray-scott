@@ -11,7 +11,7 @@
 # PCA of Gray-Scott states in image space vs JEPA latent space, colored by phase.
 # -> results/pca_image_latent.png
 #
-# Usage:  sbatch run_pca.sh [CKPT] [PER_REGIME] [FRAMES_PER_CLIP]
+# Usage:  sbatch scripts/run_pca.sh [CKPT] [PER_REGIME] [FRAMES_PER_CLIP]
 set -e
 REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
 source "$REPO/env.sh"

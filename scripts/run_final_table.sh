@@ -11,7 +11,7 @@
 # Final per-phase VRMSE table (mean ± std over clips) for JEPA + all baselines at
 # h=1,15,30,60. Same fixed clips + paper metric for every model. Cached decoder/U-Net/FNO.
 #
-# Usage:  sbatch run_final_table.sh [CKPT] [PER_REGIME] [H]
+# Usage:  sbatch scripts/run_final_table.sh [CKPT] [PER_REGIME] [H]
 set -e
 REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
 source "$REPO/env.sh"

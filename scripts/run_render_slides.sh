@@ -11,7 +11,7 @@
 # Render JEPA + truth field rollouts for the 4 slide phases -> outputs/slides_fields.npz,
 # then build outputs/gif_regimes.gif (2x2 dynamic/static) + outputs/gif_diff.gif (JEPA error).
 #
-# Usage:  sbatch run_render_slides.sh [CKPT] [FRAMES]
+# Usage:  sbatch scripts/run_render_slides.sh [CKPT] [FRAMES]
 set -e
 REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
 source "$REPO/env.sh"

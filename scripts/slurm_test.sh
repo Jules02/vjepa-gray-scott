@@ -3,7 +3,7 @@
 #SBATCH --partition=defq
 #SBATCH --reservation=Vivatech
 # No hardcoded --account: SLURM uses your DEFAULT account (your team allocation), so this
-# works on any team. Override with: sbatch --account=<acct> slurm_test.sh
+# works on any team. Override with: sbatch --account=<acct> scripts/slurm_test.sh
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --reservation=Vivatech

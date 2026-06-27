@@ -1,17 +1,17 @@
 #!/bin/bash
-#SBATCH --job-name=gs_pot
+#SBATCH --job-name=gs_walk
 #SBATCH --partition=defq
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --gres=gpu:1
 #SBATCH --time=00:45:00
-#SBATCH --output=gs_pot_%j.out
-#SBATCH --error=gs_pot_%j.err
-# Does a monotone 'time potential' Phi(z) exist per phase (learned + held-out tested)?
-# -> results/potential_pca_time.png, potential_collapse.png, potential_summary.png
+#SBATCH --output=gs_walk_%j.out
+#SBATCH --error=gs_walk_%j.err
+# Random-walk vs directed-walk analysis of Gray-Scott trajectories per phase (latent &
+# image): MSD exponent alpha, direction autocorrelation, straightness. -> results/walk_*.png
 #
-# Usage:  sbatch run_potential.sh [CKPT] [PER_REGIME] [H]
+# Usage:  sbatch scripts/run_walk.sh [CKPT] [PER_REGIME] [H]
 set -e
 REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
 source "$REPO/env.sh"
@@ -22,6 +22,6 @@ PER_REGIME="${2:-20}"
 H="${3:-60}"
 
 cd "$REPO"
-uv run --project "$REPO" python -m gray_scott.latent_potential \
+uv run --project "$REPO" python -m gray_scott.latent_walk \
   --ckpt "$CKPT" --per_regime "$PER_REGIME" --H "$H" --split test
-echo "=== DONE -> results/potential_*.png ==="
+echo "=== DONE -> results/walk_*.png ==="

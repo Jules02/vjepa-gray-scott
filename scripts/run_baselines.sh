@@ -13,7 +13,7 @@
 # VRMSE metric / data / stride / test split as the JEPA eval, so the numbers are directly
 # comparable. All baselines predict fields directly (no decoder floor).
 #
-# Usage:  sbatch run_baselines.sh [H] [EPOCHS] [SPLIT] [STRIDE]
+# Usage:  sbatch scripts/run_baselines.sh [H] [EPOCHS] [SPLIT] [STRIDE]
 set -e
 REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
 source "$REPO/env.sh"

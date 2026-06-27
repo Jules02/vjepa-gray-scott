@@ -10,9 +10,9 @@
 #SBATCH --error=gs_decoder_%j.err
 # Train a latent->field decoder ON TOP of a frozen V-JEPA checkpoint (probe for VRMSE).
 # Encoder/predictor frozen; only the decoder learns MSE(decode(encode(x)), x) on TRAIN.
-# The trained decoder is cached back INTO the checkpoint, so vrmse.sh loads it directly.
+# The trained decoder is cached back INTO the checkpoint, so scripts/vrmse.sh loads it directly.
 #
-# Usage:  sbatch train_decoder.sh <ckpt.pth.tar> [epochs] [init_from.pth.tar]
+# Usage:  sbatch scripts/train_decoder.sh <ckpt.pth.tar> [epochs] [init_from.pth.tar]
 #   init_from : optional — warm-start the decoder from another checkpoint's decoder
 #               (e.g. train epoch_25's decoder from epoch_10's -> far fewer epochs).
 set -e
@@ -20,7 +20,7 @@ REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
 source "$REPO/env.sh"
 module load python312
 
-CKPT="${1:?usage: sbatch train_decoder.sh <ckpt.pth.tar> [epochs] [init_from.pth.tar]}"
+CKPT="${1:?usage: sbatch scripts/train_decoder.sh <ckpt.pth.tar> [epochs] [init_from.pth.tar]}"
 EPOCHS="${2:-15}"
 INIT_FROM="${3:-}"
 

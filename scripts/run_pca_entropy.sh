@@ -11,7 +11,7 @@
 # Latent PCA per phase colored by (1) normalized time and (2) (A,B) concentration entropy.
 # -> results/pca_color_time.png, results/pca_color_entropy.png
 #
-# Usage:  sbatch run_pca_entropy.sh [CKPT] [PER_REGIME] [H]
+# Usage:  sbatch scripts/run_pca_entropy.sh [CKPT] [PER_REGIME] [H]
 set -e
 REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
 source "$REPO/env.sh"

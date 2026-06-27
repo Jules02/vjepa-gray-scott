@@ -12,7 +12,7 @@
 # 2D + value-space (A,B) cube-pooled) and VGG-Gatys style distance, for JEPA + all baselines.
 # -> results/field_*.png + field_metrics_data.npz   (VGG19 weights downloaded once)
 #
-# Usage:  sbatch run_field.sh [CKPT] [PER_REGIME] [H]
+# Usage:  sbatch scripts/run_field.sh [CKPT] [PER_REGIME] [H]
 set -e
 REPO="${EBJEPA_REPO:-$SLURM_SUBMIT_DIR}"
 source "$REPO/env.sh"
