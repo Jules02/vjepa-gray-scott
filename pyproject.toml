@@ -12,32 +12,26 @@ authors = [
     {name = "Arthur Gilles"},
 ]
 dependencies = [
-    "einops>=0.8.1",
-    "fire>=0.7.0",
-    "h5py>=3.11.0",
-    "huggingface-hub>=0.33.2",
-    "matplotlib>=3.10.3",
-    "opencv-python>=4.12.0.88",
-    "pudb>=2025.1",
-    "scikit-learn>=1.7.0",
-    "tiktoken>=0.9.0",
     "torch>=2.7.0",
-    "torchcodec>=0.4.0",
     "torchvision",
-    "wandb[media]>=0.21.1",
-    "gymnasium>=1.1.1",
-    "imageio",
-    "seaborn",
-    "submitit",
-    "tqdm",
-    "pymunk",
-    "decord; sys_platform == 'linux' and platform_machine == 'x86_64'",
-    "omegaconf",
-    "pyyaml",
-    "ruamel.yaml",
+    "numpy",
+    "scipy",
+    "pillow",
+    "einops>=0.8.1",
     "h5py>=3.16.0",
+    "scikit-learn>=1.7.0",
+    "matplotlib>=3.10.3",
+    "imageio",
+    "omegaconf",
+    "wandb[media]>=0.21.1",
 ]
 requires-python = "==3.12.*"
+
+[project.optional-dependencies]
+# The Well neural baselines + its dataset-download CLI (the-well-download).
+# Not needed to train or to run the basic VRMSE eval; install with:
+#   pip install -e ".[baselines]"
+baselines = ["the_well"]
 
 # aarch64 compute nodes (GB200) need CUDA wheels from the PyTorch index
 [tool.uv.sources]

@@ -40,8 +40,8 @@ for architecture notes.
 
 ```bash
 # Python 3.12 (see .python-version)
-pip install -e .          # installs the vendored eb_jepa core + deps
-pip install the-well      # required for the Gray-Scott data + baseline models
+pip install -e .               # core: everything needed to train + run the basic VRMSE eval
+pip install -e ".[baselines]"  # optional: The Well (neural baselines + the dataset-download CLI)
 ```
 
 **Data.** The Gray-Scott trajectories come from
