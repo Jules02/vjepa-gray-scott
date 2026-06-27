@@ -86,6 +86,15 @@ visualization scripts is documented in
 - **[`gray_scott/README.md`](gray_scott/README.md)** — the track in depth: data,
   model, scripts, and the VRMSE metric variants.
 
+## Team
+
+Team **JEPAdormi** — Hack the World(s) 2026:
+
+- [Jules Dupont](https://github.com/Jules02) (@Jules02)
+- [Adnan Ben Mansour](https://github.com/Adnan-Ben-Mansour) (@Adnan-Ben-Mansour)
+- [Alexandre Duplessis](https://github.com/alexandreduplessis) (@alexandreduplessis)
+- [Arthur Gilles](https://github.com/ArthurGilles) (@ArthurGilles)
+
 ## Credits
 
 Built on the hackathon organizer's [`eb_jepa`](https://github.com/Trick5t3r/eb_jepa),
