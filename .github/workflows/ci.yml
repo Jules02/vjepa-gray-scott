@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"   # matches .python-version / requires-python
+          cache: pip
+
+      # Install the CPU build of PyTorch first so `pip install -e .` doesn't pull
+      # the large default CUDA wheels on the runner.
+      - name: Install CPU PyTorch
+        run: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Install package (core dependencies)
+        run: pip install -e .
+
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run smoke tests
+        run: python -m pytest -q

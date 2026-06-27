@@ -1,5 +1,7 @@
 # V-JEPA for Gray-Scott dynamics
 
+[![CI](https://github.com/Jules02/vjepa-gray-scott/actions/workflows/ci.yml/badge.svg)](https://github.com/Jules02/vjepa-gray-scott/actions/workflows/ci.yml)
+
 **Video Joint Embedding Predictive Architecture (V-JEPA)** for spatiotemporal PDE dynamics —
 the [Gray-Scott reaction-diffusion system](https://polymathic-ai.org/the_well/datasets/gray_scott_reaction_diffusion/).
 
