@@ -16,7 +16,11 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 DELTA  = 1.0
 H      = 40
 FPS    = 8
-CKPT   = "/lustre/work/vivatech-jepadormi/aduplessi/checkpoints/gray_scott/dev/epoch_19.pth.tar"
+CKPT   = os.environ.get(
+    "CKPT",
+    os.path.join(os.environ.get("EBJEPA_CKPTS", "checkpoints"),
+                 "gray_scott", "dev", "epoch_19.pth.tar"),
+)
 OUTDIR = "gray_scott/viz"
 
 

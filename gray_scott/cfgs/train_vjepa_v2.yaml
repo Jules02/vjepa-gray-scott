@@ -10,7 +10,7 @@
 # Still NO inline VRMSE (eval_every: 0): selecting on the reported metric = cheating.
 meta:
   seed: 0
-  ckpt_dir: /lustre/work/vivatech-jepadormi/abenmanso/checkpoints/gray_scott/vjepa_v2
+  ckpt_dir: ${oc.env:EBJEPA_CKPTS,checkpoints}/gray_scott/vjepa_v2
 data:
   # data_root omitted -> resolved by $GRAY_SCOTT_DATA_ROOT / $EBJEPA_DSETS (see eb_jepa/datasets/gray_scott/dataset.py)
   split: train

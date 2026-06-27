@@ -4,13 +4,13 @@
 # only (latent val-loss on trajectory-disjoint valid trajectories — legitimate, it is the
 # model's own loss, not the downstream metric). VRMSE is computed ONCE at the end, on TEST.
 # Changes vs cfgs/train.yaml:
-#   * ckpt_dir -> OUR space (do not touch aduplessi's)
+#   * ckpt_dir -> $EBJEPA_CKPTS/gray_scott/vjepa (env-driven; see env.sh)
 #   * eval_every: 0  -> NO inline VRMSE (no peeking at the eval metric)
 #   * save_every: 1  -> keep every epoch so we can select by latent val-loss post-hoc
 #   * epochs: 30     -> early-stop / select on the latent val-loss curve
 meta:
   seed: 0
-  ckpt_dir: /lustre/work/vivatech-jepadormi/abenmanso/checkpoints/gray_scott/vjepa
+  ckpt_dir: ${oc.env:EBJEPA_CKPTS,checkpoints}/gray_scott/vjepa
 data:
   # data_root omitted -> resolved by $GRAY_SCOTT_DATA_ROOT / $EBJEPA_DSETS (see eb_jepa/datasets/gray_scott/dataset.py)
   split: train

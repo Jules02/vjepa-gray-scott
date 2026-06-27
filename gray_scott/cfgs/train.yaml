@@ -1,7 +1,7 @@
 # Gray-Scott temporal-JEPA pretraining config — 2D physical video [2,T,128,128].
 meta:
   seed: 0
-  ckpt_dir: /lustre/work/vivatech-jepadormi/aduplessi/checkpoints/gray_scott/dev
+  ckpt_dir: ${oc.env:EBJEPA_CKPTS,checkpoints}/gray_scott/dev
 data:
   # data_root omitted -> resolved by $GRAY_SCOTT_DATA_ROOT / $EBJEPA_DSETS (see eb_jepa/datasets/gray_scott/dataset.py)
   split: train

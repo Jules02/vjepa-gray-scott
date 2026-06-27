@@ -1,6 +1,6 @@
 meta:
   seed: 0
-  ckpt_dir: /lustre/work/vivatech-jepadormi/aduplessi/checkpoints/gray_scott/stride1
+  ckpt_dir: ${oc.env:EBJEPA_CKPTS,checkpoints}/gray_scott/stride1
 data:
   # data_root omitted -> resolved by $GRAY_SCOTT_DATA_ROOT / $EBJEPA_DSETS (see eb_jepa/datasets/gray_scott/dataset.py)
   split: train
