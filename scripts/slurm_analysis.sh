@@ -14,7 +14,7 @@ cd "$REPO"
 CKPT="${CKPT:-$EBJEPA_CKPTS/gray_scott/dev/epoch_19.pth.tar}"
 
 echo "=== Exp A+B+C: PCA/dynamics-probe/perturbation sensitivity ==="
-uv run python -m gray_scott.analysis \
+uv run python -m gray_scott.archive.analysis \
     --ckpt "$CKPT" \
     --split valid \
     --n-clips 200 \
@@ -24,7 +24,7 @@ uv run python -m gray_scott.analysis \
     --tag small_ep19
 
 echo "=== Exp D: Perturbation GIFs ==="
-uv run python -m gray_scott.perturb_gif \
+uv run python -m gray_scott.archive.perturb_gif \
     --ckpt "$CKPT" \
     --split valid \
     --H 30 \

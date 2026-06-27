@@ -9,7 +9,7 @@ Three metrics alongside VRMSE, on the decoded physical fields (JEPA via decoder 
   - vgg_style  : Gatys style distance. Decode -> RGB (A->R, B->B, green=(A+B)/2) -> ImageNet
                  norm -> VGG19 Gram matrices (conv1_1..conv5_1) -> MSE. Per frame, per horizon.
 
-Run: python -m gray_scott.field_metrics --ckpt <jepa.pth.tar> [--per_regime 20] [--H 60]
+Run: python -m gray_scott.archive.field_metrics --ckpt <jepa.pth.tar> [--per_regime 20] [--H 60]
 """
 import os
 import sys

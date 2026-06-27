@@ -4,7 +4,7 @@ For each regime, adds delta to the z-scored A (or B) channel across all context
 frames and compares the JEPA's predicted rollout with the unperturbed prediction.
 
 Usage:
-  uv run python -m gray_scott.perturb_ab_gif --ckpt <...> --delta 1.0
+  uv run python -m gray_scott.archive.perturb_ab_gif --ckpt <...> --delta 1.0
 """
 import re, os, argparse, glob
 import h5py

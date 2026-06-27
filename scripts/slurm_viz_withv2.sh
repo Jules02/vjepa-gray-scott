@@ -20,7 +20,7 @@ echo "=== GIFs: Truth | JEPA-small | JEPA-v2 (abenmanso ep10) | UNetClassic | CN
 [ -n "${THE_WELL_REPO:-}" ] && export PYTHONPATH="$THE_WELL_REPO:${PYTHONPATH:-}"
 
 uv run --with "neuraloperator==0.3.0" --with torch-harmonics --with timm --with einops \
-    python -m gray_scott.visualize \
+    python -m gray_scott.archive.visualize \
         --ckpt "$CKPT_SMALL" \
         --ckpt2 "$CKPT_V2" \
         --H 60 \

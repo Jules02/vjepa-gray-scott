@@ -9,8 +9,8 @@ green/red RGB style as eval_compare.py (R = chemical A, G = chemical B).
 No torch / GPU needed — reads the HDF5 directly with h5py.
 
 Run (from repo root, with the project venv active):
-  python gray_scott/viz_regimes_gif.py
-  python gray_scott/viz_regimes_gif.py --frames 80 --fps 12 --traj 0
+  python gray_scott/archive/viz_regimes_gif.py
+  python gray_scott/archive/viz_regimes_gif.py --frames 80 --fps 12 --traj 0
 """
 import argparse
 import glob

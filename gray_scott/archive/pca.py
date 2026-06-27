@@ -5,7 +5,7 @@ runs PCA, and produces scatter plots PC1 vs PC2 colored by regime / F / k.
 Also reports Pearson correlation of each PC with F and k.
 
 Usage:
-  uv run python -m gray_scott.pca --ckpt <epoch_19.pth.tar> --outdir gray_scott/viz
+  uv run python -m gray_scott.archive.pca --ckpt <epoch_19.pth.tar> --outdir gray_scott/viz
 """
 import re
 import os

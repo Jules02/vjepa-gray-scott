@@ -15,7 +15,7 @@ CKPT="${CKPT:-$EBJEPA_CKPTS/gray_scott/dev/epoch_19.pth.tar}"
 
 echo "=== PCA of JEPA-small latents ==="
 
-uv run python -m gray_scott.pca \
+uv run python -m gray_scott.archive.pca \
     --ckpt "$CKPT" \
     --split valid \
     --n-clips 300 \

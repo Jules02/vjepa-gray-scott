@@ -22,6 +22,6 @@ PER_REGIME="${2:-20}"
 H="${3:-60}"
 
 cd "$REPO"
-uv run --project "$REPO" python -m gray_scott.plot_pca_entropy \
+uv run --project "$REPO" python -m gray_scott.archive.plot_pca_entropy \
   --ckpt "$CKPT" --per_regime "$PER_REGIME" --H "$H" --split test
 echo "=== DONE -> results/pca_color_{time,entropy}.png ==="

@@ -21,6 +21,6 @@ CKPT="${1:-$EBJEPA_CKPTS/gray_scott/vjepa_v2/epoch_25.pth.tar}"
 FRAMES="${2:-60}"
 
 cd "$REPO"
-uv run --project "$REPO" python -m gray_scott.render_slides \
+uv run --project "$REPO" python -m gray_scott.archive.render_slides \
   --ckpt "$CKPT" --frames "$FRAMES" --split test
 echo "=== DONE -> outputs/gif_regimes.gif, outputs/gif_diff.gif ==="

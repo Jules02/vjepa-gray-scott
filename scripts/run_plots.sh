@@ -22,6 +22,6 @@ PER_REGIME="${2:-20}"
 H="${3:-60}"
 
 cd "$REPO"
-uv run --project "$REPO" python -m gray_scott.plot_results \
+uv run --project "$REPO" python -m gray_scott.archive.plot_results \
   --ckpt "$CKPT" --per_regime "$PER_REGIME" --H "$H" --split test --out_dir results
 echo "=== DONE -> results/*.png ==="

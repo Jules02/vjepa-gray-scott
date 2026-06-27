@@ -6,7 +6,7 @@ phase's clips. Same fixed clips + same metric for every model -> directly compar
 Field baselines (persistence/linear/climatology/unet/fno) are floor-free; the JEPA carries
 its decoder floor (reported on the last row).
 
-Run: python -m gray_scott.final_table --ckpt <jepa.pth.tar> [--per_regime 20] [--H 60]
+Run: python -m gray_scott.archive.final_table --ckpt <jepa.pth.tar> [--per_regime 20] [--H 60]
 """
 import sys
 

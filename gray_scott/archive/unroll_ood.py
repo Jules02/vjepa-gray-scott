@@ -27,7 +27,7 @@ The standard Pearson/Karl-Sims model reproduces The Well's named regimes at thei
 filename (F,k): Du=0.16, Dv=0.08, dt=1, periodic BC, 9-point Laplacian.
 
 Run (on a GPU node, via uv):
-  python -m gray_scott.unroll_ood --ckpt <.../latest.pth.tar> \
+  python -m gray_scott.archive.unroll_ood --ckpt <.../latest.pth.tar> \
       --F 0.020 --k 0.0515 --source-regime spirals --H 60
 """
 import argparse
@@ -46,7 +46,7 @@ except ImportError:
 
 from eb_jepa.datasets.gray_scott.dataset import MEAN, STD, ROOT, parse_regime
 from gray_scott.eval import C, load_jepa, build_decoder, rollout_latents
-from gray_scott.visualize import _rgb, make_compare_gif
+from gray_scott.archive.visualize import _rgb, make_compare_gif
 
 # Standard Gray-Scott constants (reproduce The Well's named regimes at their F,k).
 DU, DV, DT = 0.16, 0.08, 1.0

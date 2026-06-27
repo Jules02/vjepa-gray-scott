@@ -22,6 +22,6 @@ PER_REGIME="${2:-20}"
 FPC="${3:-6}"
 
 cd "$REPO"
-uv run --project "$REPO" python -m gray_scott.plot_pca \
+uv run --project "$REPO" python -m gray_scott.archive.plot_pca \
   --ckpt "$CKPT" --per_regime "$PER_REGIME" --fpc "$FPC" --split test
 echo "=== DONE -> results/pca_image_latent.png ==="

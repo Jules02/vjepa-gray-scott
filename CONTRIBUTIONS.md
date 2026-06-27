@@ -19,21 +19,27 @@ Everything below is what we added or changed.
 
 ## 1. New code we authored
 
-### `gray_scott/`
+### `gray_scott/` — core pipeline
 Temporal Gray-Scott reaction-diffusion VJEPA, end to end:
 - **Model & training** — `main.py` (encoder/predictor/JEPA build), `train_decoder.py`.
 - **Evaluation** — `eval.py`, `eval_common.py`, `eval_regimes.py`, `eval_compare.py`,
-  `eval_baselines.py`, `unroll_ood.py`, `final_table.py` — VRMSE (per-channel u/v,
-  pooled-ratio, mean-of-ratios variants) + OOD unrolling + per-regime reporting.
+  `eval_baselines.py` — VRMSE (per-channel u/v, pooled-ratio, mean-of-ratios
+  variants) + per-regime reporting.
 - **Baselines** — `baselines.py`, `_well_baselines.py` (ResUNet, FNO/TFNO,
   UNetClassic, UNetConvNext via [The Well](https://github.com/PolymathicAI/the_well)).
-- **Latent analysis** — `pca.py`, `pca_entropy_anim.py`, `plot_pca*.py`,
-  `latent_potential.py`, `latent_walk.py`, `probe.py`, `field_metrics.py`.
-- **Visualization** — `visualize.py`, `viz_rollouts.py`, `viz_regimes_gif.py`,
-  `perturb_gif.py`, `perturb_ab_gif.py`, `spirals_2panel.py`, `gif_pca.py`,
-  `gif_slides.py`, `render_slides.py`, `slides_metrics.py`, plotting helpers.
 - **Configs** — `cfgs/{train,train_large,train_stride1,train_vjepa,train_vjepa_v2,eval}.yaml`.
 - **Docs** — `README.md`, `DESIGN.md`, `DESIGN_large.md`.
+
+### `gray_scott/archive/` — analysis & visualization
+The exploratory / figure-producing scripts (made the talk's plots and GIFs),
+kept out of the core path. Run via `python -m gray_scott.archive.<name>`.
+- **Latent analysis** — `pca.py`, `pca_entropy_anim.py`, `plot_pca*.py`,
+  `latent_potential.py`, `latent_walk.py`, `probe.py`, `field_metrics.py`,
+  `final_table.py`.
+- **Visualization** — `visualize.py`, `viz_rollouts.py`, `viz_regimes_gif.py`,
+  `perturb_gif.py`, `perturb_ab_gif.py`, `spirals_2panel.py`, `gif_pca.py`,
+  `gif_slides.py`, `render_slides.py`, `slides_metrics.py`, `unroll_ood.py`,
+  `replot_bars.py`, `replot_field.py`.
 
 ### Launcher scripts we wrote (`scripts/`)
 `train_gs_vjepa.sh`, `train_gs_vjepa_v2.sh`, `train_decoder.sh`,

@@ -21,6 +21,6 @@ PER_REGIME="${2:-12}"
 H="${3:-60}"
 
 cd "$REPO"
-uv run --project "$REPO" python -m gray_scott.pca_entropy_anim \
+uv run --project "$REPO" python -m gray_scott.archive.pca_entropy_anim \
   --ckpt "$CKPT" --per_regime "$PER_REGIME" --H "$H" --split test
 echo "=== DONE -> outputs/gif_pca_entropy.gif ==="

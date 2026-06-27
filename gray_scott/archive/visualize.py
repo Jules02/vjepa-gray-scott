@@ -14,8 +14,8 @@ With --baselines: adds UNetClassic and CNextU-Net panels to the same GIF,
 producing a 4-panel comparison (Truth | JEPA | UNetClassic | CNextU-Net).
 
 Run:
-  python -m gray_scott.visualize --ckpt <.../latest.pth.tar> --H 60
-  python -m gray_scott.visualize --ckpt <...> --H 60 --baselines
+  python -m gray_scott.archive.visualize --ckpt <.../latest.pth.tar> --H 60
+  python -m gray_scott.archive.visualize --ckpt <...> --H 60 --baselines
 """
 import argparse
 import os

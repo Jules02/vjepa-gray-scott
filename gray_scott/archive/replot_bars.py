@@ -3,7 +3,7 @@
 Same figures as plot_results.py (linear grouped bars, x=phase, sub-grouped by model), but
 loaded straight from the cached per-clip data so styling can be iterated instantly.
 
-Run: python gray_scott/replot_bars.py [--npz results/vrmse_data.npz] [--out_dir results]
+Run: python gray_scott/archive/replot_bars.py [--npz results/vrmse_data.npz] [--out_dir results]
 """
 import os
 import sys

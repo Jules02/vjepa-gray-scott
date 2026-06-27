@@ -22,6 +22,6 @@ PER_REGIME="${2:-20}"
 H="${3:-60}"
 
 cd "$REPO"
-uv run --project "$REPO" python -m gray_scott.latent_potential \
+uv run --project "$REPO" python -m gray_scott.archive.latent_potential \
   --ckpt "$CKPT" --per_regime "$PER_REGIME" --H "$H" --split test
 echo "=== DONE -> results/potential_*.png ==="

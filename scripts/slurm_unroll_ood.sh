@@ -32,7 +32,7 @@ SRC="${SRC:-spirals}"
 H="${H:-60}"
 
 echo "=== OOD unroll: ckpt=$CKPT  (F,k)=($F,$K)  src=$SRC  H=$H ==="
-uv run --project "$REPO" python -m gray_scott.unroll_ood \
+uv run --project "$REPO" python -m gray_scott.archive.unroll_ood \
     --ckpt "$CKPT" --F "$F" --k "$K" --source-regime "$SRC" --H "$H" \
     --outdir "$REPO/gray_scott/viz"
 echo "=== Done -> $REPO/gray_scott/viz/ood_*.gif ==="

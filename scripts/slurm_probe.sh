@@ -15,7 +15,7 @@ CKPT="${CKPT:-$EBJEPA_CKPTS/gray_scott/dev/epoch_19.pth.tar}"
 
 echo "=== F/k probe — JEPA small D=16 stride=4 epoch=19 ==="
 
-uv run python -m gray_scott.probe \
+uv run python -m gray_scott.archive.probe \
     --ckpt "$CKPT" \
     --time-stride 4 \
     --steps 2000 \

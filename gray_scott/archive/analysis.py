@@ -8,7 +8,7 @@ Three experiments:
      measure how much the pooled latent changes (encoder robustness vs sensitivity)
 
 Usage:
-  uv run python -m gray_scott.analysis --ckpt <epoch_19.pth.tar>
+  uv run python -m gray_scott.archive.analysis --ckpt <epoch_19.pth.tar>
 """
 import re
 import os

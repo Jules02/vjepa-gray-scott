@@ -7,7 +7,7 @@ Uses the SAME fixed eval clips as the VRMSE table, so the GIFs match the reporte
 U-Net / FNO are retrained here (their weights were not saved by baselines.py) — fast on a
 GB200, qualitatively identical to the table's.
 
-Run:  python -m gray_scott.viz_rollouts --ckpt <jepa.pth.tar> --H 30 [--clips 0,200,399]
+Run:  python -m gray_scott.archive.viz_rollouts --ckpt <jepa.pth.tar> --H 30 [--clips 0,200,399]
 """
 import os
 import sys

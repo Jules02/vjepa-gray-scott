@@ -13,7 +13,7 @@ cd "$REPO"
 
 CKPT="${CKPT:-$EBJEPA_CKPTS/gray_scott/dev/epoch_19.pth.tar}"
 
-uv run python -m gray_scott.perturb_ab_gif \
+uv run python -m gray_scott.archive.perturb_ab_gif \
     --ckpt "$CKPT" \
     --split valid \
     --H 40 \

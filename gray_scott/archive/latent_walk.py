@@ -10,7 +10,7 @@ For each phase, encodes its trajectories and characterises the geometry of the p
 Spatial fields/latents are avg-pooled (keeps the moving-pattern motion, stays light).
 Saves results/walk_data.npz + 3 figures.
 
-Run: python -m gray_scott.latent_walk --ckpt <jepa.pth.tar> [--per_regime 20] [--H 60]
+Run: python -m gray_scott.archive.latent_walk --ckpt <jepa.pth.tar> [--per_regime 20] [--H 60]
 """
 import os
 import sys

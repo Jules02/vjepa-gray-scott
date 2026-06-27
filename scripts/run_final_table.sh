@@ -22,6 +22,6 @@ PER_REGIME="${2:-20}"   # clips per phase -> mean±std over this many
 H="${3:-60}"
 
 cd "$REPO"
-uv run --project "$REPO" python -m gray_scott.final_table \
+uv run --project "$REPO" python -m gray_scott.archive.final_table \
   --ckpt "$CKPT" --per_regime "$PER_REGIME" --H "$H" --horizons 1,15,30,60 --split test
 echo "=== DONE ==="

@@ -10,7 +10,7 @@ Protocol:
   - Report R² on validation set
 
 Usage:
-  uv run python gray_scott/probe.py --ckpt <path/to/epoch_19.pth.tar>
+  uv run python gray_scott/archive/probe.py --ckpt <path/to/epoch_19.pth.tar>
 """
 import re
 import argparse

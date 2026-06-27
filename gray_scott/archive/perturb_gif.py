@@ -9,7 +9,7 @@ If the GIF barely changes across epsilon, the encoder is regime-focused (good fo
 If it changes dramatically, initial conditions matter more.
 
 Usage:
-  uv run python -m gray_scott.perturb_gif --ckpt <...> --outdir gray_scott/viz
+  uv run python -m gray_scott.archive.perturb_gif --ckpt <...> --outdir gray_scott/viz
 """
 import re
 import os

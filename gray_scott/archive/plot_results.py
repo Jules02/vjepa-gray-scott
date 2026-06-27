@@ -6,7 +6,7 @@ results/vrmse_data.npz, and renders one LINEAR grouped bar chart per horizon:
 Degenerate phases (gliders/spirals: near-zero spatial variance -> VRMSE blows up for every
 model) would crush a linear axis, so their bars are capped and the true value is printed above.
 
-Run: python -m gray_scott.plot_results --ckpt <jepa.pth.tar> [--per_regime 100] [--H 60]
+Run: python -m gray_scott.archive.plot_results --ckpt <jepa.pth.tar> [--per_regime 100] [--H 60]
 """
 import os
 import sys
@@ -20,7 +20,7 @@ from omegaconf import OmegaConf
 
 from gray_scott.eval import load_jepa, build_decoder, C
 from gray_scott.eval_common import build_regime_clips
-from gray_scott.final_table import per_clip_jepa, per_clip_field, per_clip_floor
+from gray_scott.archive.final_table import per_clip_jepa, per_clip_field, per_clip_floor
 from gray_scott.baselines import (
     FNO2d, load_or_train, step_model, step_persistence, step_linear, step_climatology)
 from eb_jepa.architectures import ResUNet

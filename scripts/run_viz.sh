@@ -23,6 +23,6 @@ H="${2:-120}"
 PER_REGIME="${3:-1}"   # GIFs per phase (1 -> 6 GIFs; 2 -> 12 GIFs ...)
 
 cd "$REPO"
-uv run --project "$REPO" python -m gray_scott.viz_rollouts \
+uv run --project "$REPO" python -m gray_scott.archive.viz_rollouts \
   --ckpt "$CKPT" --H "$H" --split test --mode regimes --per_regime "$PER_REGIME" --out_dir results
 echo "=== DONE -> results/viz_<phase>.gif ==="

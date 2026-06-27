@@ -3,7 +3,7 @@
 Saves outputs/slides_fields.npz (float16, physical fields, reusable for re-styling the GIFs
 without GPU), then builds outputs/gif_regimes.gif + outputs/gif_diff.gif.
 
-Run: python -m gray_scott.render_slides --ckpt <jepa.pth.tar> [--frames 36]
+Run: python -m gray_scott.archive.render_slides --ckpt <jepa.pth.tar> [--frames 36]
 """
 import os
 import sys
@@ -14,7 +14,7 @@ from omegaconf import OmegaConf
 
 from gray_scott.eval import load_jepa, build_decoder, rollout_latents, C
 from gray_scott.eval_common import build_regime_clips
-from gray_scott.gif_slides import build_both
+from gray_scott.archive.gif_slides import build_both
 from gray_scott.baselines import FNO2d, load_or_train, step_model
 from eb_jepa.architectures import ResUNet
 from eb_jepa.datasets.gray_scott.dataset import MEAN, STD

@@ -3,7 +3,7 @@
 Saves outputs/pca_anim_data.npz (Z2_<phase> [k*T,2], ent_<phase> [k*T], T) — reusable for
 re-styling the GIF without GPU — then calls gif_pca.build().
 
-Run: python -m gray_scott.pca_entropy_anim --ckpt <jepa.pth.tar> [--per_regime 12] [--H 60]
+Run: python -m gray_scott.archive.pca_entropy_anim --ckpt <jepa.pth.tar> [--per_regime 12] [--H 60]
 """
 import os
 import sys
@@ -15,9 +15,9 @@ from sklearn.decomposition import PCA
 
 from gray_scott.eval import load_jepa, C
 from gray_scott.eval_common import build_regime_clips
-from gray_scott.latent_walk import encode_traj_latent
-from gray_scott.plot_pca_entropy import ab_entropy
-from gray_scott.gif_pca import build, ORDER
+from gray_scott.archive.latent_walk import encode_traj_latent
+from gray_scott.archive.plot_pca_entropy import ab_entropy
+from gray_scott.archive.gif_pca import build, ORDER
 from eb_jepa.datasets.gray_scott.dataset import MEAN, STD
 
 _M = np.array(MEAN).reshape(2, 1, 1, 1)

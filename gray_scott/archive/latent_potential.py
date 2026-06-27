@@ -9,7 +9,7 @@ regimes (spots/maze/bubbles/worms) should have one; oscillatory/propagating regi
 Visualises: time-colored PCA per phase, Phi(z_t)-vs-t collapse, and a summary bar chart.
 Saves results/potential_*.png + potential_data.npz.
 
-Run: python -m gray_scott.latent_potential --ckpt <jepa.pth.tar> [--per_regime 20] [--H 60]
+Run: python -m gray_scott.archive.latent_potential --ckpt <jepa.pth.tar> [--per_regime 20] [--H 60]
 """
 import os
 import sys
@@ -26,7 +26,7 @@ from scipy.stats import spearmanr
 
 from gray_scott.eval import load_jepa, C
 from gray_scott.eval_common import build_regime_clips
-from gray_scott.latent_walk import encode_traj_latent
+from gray_scott.archive.latent_walk import encode_traj_latent
 
 
 def potential_fit(Zs, T, ntrain):

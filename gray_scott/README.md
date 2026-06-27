@@ -25,12 +25,13 @@ gray_scott/
   eval_compare.py     JEPA vs The Well U-Net baselines, pooled VRMSE, autoregressive
   eval_baselines.py   pretrained The Well baselines, paper VRMSE, teacher-forced
   train_decoder.py    continue-train the latent->field decoder from a checkpoint
-  visualize.py        truth-vs-rollout filmstrip PNG + GIF (optional baseline panels)
-  unroll_ood.py       roll JEPA from an UNSEEN (F,k) — out-of-distribution probe
-  viz_regimes_gif.py  presentation GIF: the 6 regimes beside the F-k phase diagram
   _well_baselines.py  shared helper: stub heavy unused The Well models on import
   cfgs/               train.yaml, train_large.yaml, eval.yaml
   DESIGN.md, DESIGN_large.md   design notes for the base / large runs
+  archive/            visualization & latent-analysis scripts (PCA, GIFs,
+                      perturbation, slides, probe, OOD unroll, ...) that produced
+                      the talk's figures/GIFs; run via
+                      `python -m gray_scott.archive.<name>` (see archive/README.md)
 ```
 
 ## The model — temporal / predictive JEPA (not two-view)
@@ -86,9 +87,9 @@ uv run --with "neuraloperator==0.3.0" --with torch-harmonics --with timm \
 | `eval_compare.py` | JEPA **vs The Well U-Net baselines**, both autoregressive at stride=4, pooled VRMSE. | `uv run ... python gray_scott/eval_compare.py --ckpt <ckpt>` |
 | `eval_baselines.py` | Pretrained The Well baselines (FNO/TFNO/UNet/CNextUNet) alone, the paper's exact metric/protocol. | `uv run ... python gray_scott/eval_baselines.py` |
 | `train_decoder.py` | Continue-train the latent->field decoder stored in a checkpoint for more epochs (sharpens the VRMSE floor). | `python -m gray_scott.train_decoder --ckpt <ckpt> --epochs 30` |
-| `visualize.py` | Truth-vs-rollout filmstrip PNG + GIF per channel; `--baselines` adds U-Net panels. | `python -m gray_scott.visualize --ckpt <ckpt> --H 60 [--baselines]` |
-| `unroll_ood.py` | Out-of-distribution probe: seed from a real frame, evolve under an **unseen (F,k)**, then watch the (state-only) JEPA rollout. | `python gray_scott/unroll_ood.py --ckpt <ckpt> --F 0.020 --k 0.0515 --source-regime spirals --H 60` |
-| `viz_regimes_gif.py` | Presentation GIF: the 6 regimes animating beside the F-k phase diagram (h5py only, no GPU). | `python gray_scott/viz_regimes_gif.py` |
+| `visualize.py` | Truth-vs-rollout filmstrip PNG + GIF per channel; `--baselines` adds U-Net panels. | `python -m gray_scott.archive.visualize --ckpt <ckpt> --H 60 [--baselines]` |
+| `unroll_ood.py` | Out-of-distribution probe: seed from a real frame, evolve under an **unseen (F,k)**, then watch the (state-only) JEPA rollout. | `python gray_scott/archive/unroll_ood.py --ckpt <ckpt> --F 0.020 --k 0.0515 --source-regime spirals --H 60` |
+| `viz_regimes_gif.py` | Presentation GIF: the 6 regimes animating beside the F-k phase diagram (h5py only, no GPU). | `python gray_scott/archive/viz_regimes_gif.py` |
 
 ### A note on the VRMSE variants
 The eval scripts deliberately use **different** VRMSE definitions — compare like

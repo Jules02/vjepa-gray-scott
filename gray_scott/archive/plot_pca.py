@@ -5,7 +5,7 @@ on (a) the flattened z-scored fields and (b) the JEPA encoder latent (avg-pooled
 scatters PC1 vs PC2 colored by phase. Shows whether the learned latent organizes the
 6 reaction-diffusion regimes more cleanly than raw pixels.
 
-Run: python -m gray_scott.plot_pca --ckpt <jepa.pth.tar> [--per_regime 20] [--fpc 6]
+Run: python -m gray_scott.archive.plot_pca --ckpt <jepa.pth.tar> [--per_regime 20] [--fpc 6]
 """
 import os
 import sys

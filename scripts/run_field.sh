@@ -23,6 +23,6 @@ PER_REGIME="${2:-20}"
 H="${3:-60}"
 
 cd "$REPO"
-uv run --project "$REPO" python -m gray_scott.field_metrics \
+uv run --project "$REPO" python -m gray_scott.archive.field_metrics \
   --ckpt "$CKPT" --per_regime "$PER_REGIME" --H "$H" --split test
 echo "=== DONE -> results/field_*.png ==="

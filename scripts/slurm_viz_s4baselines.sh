@@ -16,7 +16,7 @@ CKPT_V2="${CKPT_V2:-$EBJEPA_CKPTS/gray_scott/vjepa_v2/epoch_10.pth.tar}"
 
 echo "=== GIFs: Truth | JEPA-small | JEPA-v2 (ep10) | ResUNet-s4 | FNO-s4 ==="
 
-uv run python -m gray_scott.visualize \
+uv run python -m gray_scott.archive.visualize \
     --ckpt "$CKPT_SMALL" \
     --ckpt2 "$CKPT_V2" \
     --label2 "JEPA-v2 (ep10)" \
