@@ -46,17 +46,22 @@ pip install the-well      # required for the Gray-Scott data + baseline models
 
 **Data.** The Gray-Scott trajectories come from
 [The Well](https://polymathic-ai.org/the_well/datasets/gray_scott_reaction_diffusion/).
-Point the loader at your local copy via an environment variable (no code edit
-needed) — expected layout `<ROOT>/data/{train,valid,test}/*.hdf5`:
+Download them with The Well's own CLI, then point the loader at the result (no
+code edit needed). Our loader reads the on-disk HDF5 files directly — layout
+`<ROOT>/data/{train,valid,test}/*.hdf5`:
 
 ```bash
-export GRAY_SCOTT_DATA_ROOT=/path/to/gray_scott_reaction_diffusion
-# or set EBJEPA_DSETS (env.sh does this) and the loader looks under
-#   $EBJEPA_DSETS/the_well/gray_scott_reaction_diffusion
-# default if neither is set: ./data/the_well/gray_scott_reaction_diffusion
+pip install the_well
+the-well-download --base-path data --dataset gray_scott_reaction_diffusion
+export GRAY_SCOTT_DATA_ROOT=data/datasets/gray_scott_reaction_diffusion
 ```
 
-See the [track README's Data section](gray_scott/README.md#data) for details.
+`GRAY_SCOTT_DATA_ROOT` is the explicit override; otherwise the loader looks under
+`$EBJEPA_DSETS/the_well/gray_scott_reaction_diffusion` (`env.sh` sets
+`EBJEPA_DSETS`), then `./data/the_well/gray_scott_reaction_diffusion`. (The Well
+can also *stream* from HuggingFace via its `WellDataset` API, but this repo's
+loader expects local files.) See the
+[track README's Data section](gray_scott/README.md#data) for details.
 
 > **Note:** `eb_jepa` imports `scikit-learn`, which must match your installed
 > NumPy. On a NumPy 1.x/2.x ABI error from inside sklearn, pin a matching pair

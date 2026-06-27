@@ -26,8 +26,10 @@ from matplotlib.animation import FuncAnimation, PillowWriter
 from matplotlib.patches import Rectangle
 from PIL import Image, ImageSequence
 
-DATA = ("/lustre/work/pdl17890/udl806719/datasets/the_well/"
-        "gray_scott_reaction_diffusion/data")
+from eb_jepa.datasets.gray_scott.dataset import ROOT
+
+# Same env-resolved location as the loader; <ROOT>/data/{train,valid,test}/*.hdf5
+DATA = os.path.join(ROOT, "data")
 _RE = re.compile(r"diffusion_([a-z]+)_F_([0-9.]+)_k_([0-9.]+)\.hdf5$")
 
 # Plot order (roughly low->high feed F) and a stable colour per regime, shared

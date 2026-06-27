@@ -12,7 +12,7 @@ meta:
   seed: 0
   ckpt_dir: /lustre/work/vivatech-jepadormi/abenmanso/checkpoints/gray_scott/vjepa_v2
 data:
-  data_root: /lustre/work/pdl17890/udl806719/datasets/the_well/gray_scott_reaction_diffusion
+  # data_root omitted -> resolved by $GRAY_SCOTT_DATA_ROOT / $EBJEPA_DSETS (see eb_jepa/datasets/gray_scott/dataset.py)
   split: train
   channels: 2
   img_size: 128

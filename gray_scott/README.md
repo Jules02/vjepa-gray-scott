@@ -15,10 +15,19 @@ maze-like, ...) — one regime per HDF5 file. A training item is a clip of
 `[2, T, 128, 128]` tensor, z-scored per channel. The train/valid/test splits are
 the dataset's own trajectory folders, so any probe is trajectory-disjoint.
 
-**Location.** The loader (`eb_jepa/datasets/gray_scott/dataset.py`) finds the data
-via `$GRAY_SCOTT_DATA_ROOT`, else `$EBJEPA_DSETS/the_well/gray_scott_reaction_diffusion`,
-else `./data/the_well/gray_scott_reaction_diffusion`; it expects
-`<ROOT>/data/{train,valid,test}/*.hdf5`.
+**Get it & locate it.** Download with The Well's CLI, then point the loader at it:
+
+```bash
+pip install the_well
+the-well-download --base-path data --dataset gray_scott_reaction_diffusion
+export GRAY_SCOTT_DATA_ROOT=data/datasets/gray_scott_reaction_diffusion
+```
+
+The loader (`eb_jepa/datasets/gray_scott/dataset.py`) resolves the location from
+`$GRAY_SCOTT_DATA_ROOT`, else `$EBJEPA_DSETS/the_well/gray_scott_reaction_diffusion`,
+else `./data/the_well/gray_scott_reaction_diffusion`, and reads the HDF5 files
+directly — expecting `<ROOT>/data/{train,valid,test}/*.hdf5`. (The Well can also
+stream from HuggingFace via `WellDataset`, but this loader uses local files.)
 
 ## Layout
 ```
