@@ -30,6 +30,12 @@ with VRMSE against persistence and against The Well's neural baselines
 and the full script suite, and **[`gray_scott/DESIGN.md`](gray_scott/DESIGN.md)**
 for architecture notes.
 
+> **No pretrained checkpoints are included.** During the hackathon the models were
+> trained on a GPU cluster and we did not export the weights, so there are no
+> `.pth.tar` checkpoints in this repo — the eval/visualization scripts need a
+> checkpoint you produce yourself. Anyone is welcome to run the training scripts on
+> their own GPU(s); see [Running](#running) below.
+
 ## Setup
 
 ```bash
