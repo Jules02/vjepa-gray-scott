@@ -28,7 +28,7 @@ Temporal Gray-Scott reaction-diffusion VJEPA, end to end:
 - **Baselines** — `baselines.py`, `_well_baselines.py` (ResUNet, FNO/TFNO,
   UNetClassic, UNetConvNext via [The Well](https://github.com/PolymathicAI/the_well)).
 - **Configs** — `cfgs/{train,train_large,train_stride1,train_vjepa,train_vjepa_v2,eval}.yaml`.
-- **Docs** — `README.md`, `DESIGN.md`, `DESIGN_large.md`.
+- **Docs** — `README.md`, `DESIGN.md`.
 
 ### `gray_scott/archive/` — analysis & visualization
 The exploratory / figure-producing scripts (made the talk's plots and GIFs),

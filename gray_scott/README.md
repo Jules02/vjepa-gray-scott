@@ -27,7 +27,7 @@ gray_scott/
   train_decoder.py    continue-train the latent->field decoder from a checkpoint
   _well_baselines.py  shared helper: stub heavy unused The Well models on import
   cfgs/               train.yaml, train_large.yaml, eval.yaml
-  DESIGN.md, DESIGN_large.md   design notes for the base / large runs
+  DESIGN.md           design notes: architecture, choices, VRMSE, dev->large scaling
   archive/            visualization & latent-analysis scripts (PCA, GIFs,
                       perturbation, slides, probe, OOD unroll, ...) that produced
                       the talk's figures/GIFs; run via
