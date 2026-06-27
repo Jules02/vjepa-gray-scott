@@ -13,8 +13,8 @@
 # Per-regime Gray-Scott VRMSE benchmark on a GPU.
 #
 # Usage:
-#   CKPT=/path/to/latest.pth.tar sbatch gray_scott/slurm_eval_regimes.sh
-#   CKPT=... H=30 N=80 sbatch gray_scott/slurm_eval_regimes.sh
+#   CKPT=/path/to/latest.pth.tar sbatch scripts/slurm_eval_regimes.sh
+#   CKPT=... H=30 N=80 sbatch scripts/slurm_eval_regimes.sh
 #
 # CKPT   checkpoint to evaluate (required; no default — point it at YOUR run)
 # H      rollout horizon (default 10; use 30 for the full Well Table-3 windows)

@@ -13,8 +13,8 @@
 # Unroll JEPA from an UNSEEN (F,k) — "real physics" eyeball test.
 #
 # Usage:
-#   CKPT=/path/to/latest.pth.tar F=0.020 K=0.0515 sbatch gray_scott/slurm_unroll_ood.sh
-#   CKPT=... F=0.020 K=0.0515 SRC=spirals H=60 sbatch gray_scott/slurm_unroll_ood.sh
+#   CKPT=/path/to/latest.pth.tar F=0.020 K=0.0515 sbatch scripts/slurm_unroll_ood.sh
+#   CKPT=... F=0.020 K=0.0515 SRC=spirals H=60 sbatch scripts/slurm_unroll_ood.sh
 #
 # CKPT  checkpoint (required)         F/K   the UNSEEN feed/kill rates (required)
 # SRC   source regime to seed/calibrate from (default spirals)
